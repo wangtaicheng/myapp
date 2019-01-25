@@ -1,4 +1,5 @@
 import {connect} from 'dva';
+import moment from 'moment';
 import {Table, Pagination, Popconfirm, Button} from 'antd';
 import {routerRedux} from 'dva/router';
 import router from 'umi/router';
@@ -84,7 +85,9 @@ function Users({dispatch, list: dataSource, loading, total, page: current}) {
           <UserModal record={{}} onOk={createHandler} onRefP={onRefParent}>
             <Button type="primary">Create User</Button>
           </UserModal>
-
+          {
+            moment().format('dddd')
+          }
         </div>
         <Table
           loading={loading}

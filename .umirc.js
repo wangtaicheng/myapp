@@ -14,8 +14,8 @@ export default {
       dva: true,
       dynamicImport: false,
       title: 'myapp',
-      dll: false,
-      hardSource: false,
+      dll: true,
+      hardSource: true,
       locale:{},
       routes: {
         exclude: [

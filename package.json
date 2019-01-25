@@ -9,13 +9,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "classnames": "^2.2.6",
-    "express": "^4.16.4",
-    "qs": "^6.6.0",
     "react-beautiful-dnd": "^10.0.3",
     "react-document-title": "^2.0.3",
-    "react-transition-group": "^2.5.3",
-    "socket.io": "^2.2.0"
+    "react-transition-group": "^2.5.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
