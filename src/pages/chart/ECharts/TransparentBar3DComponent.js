@@ -289,7 +289,7 @@ const option = {
   ],
 }
 
-const TransparentBar3DComPonent = () => {
+const TransparentBar3DComponent = () => {
   return (
     <ReactEcharts
       option={option}
@@ -299,4 +299,4 @@ const TransparentBar3DComPonent = () => {
   )
 }
 
-export default TransparentBar3DComPonent
+export default TransparentBar3DComponent
