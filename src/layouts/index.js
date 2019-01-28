@@ -85,6 +85,22 @@ class SiderDemo extends React.Component {
               <span>数据流</span>
               <Link to={'/dataTransfer'}/>
             </Menu.Item>
+            <SubMenu key="6" title="图表">
+              
+              <Menu.Item key="61">
+                  <span>ECharts</span>
+                  <Link to={'/chart/ECharts'}/>
+              </Menu.Item>
+            
+            <Menu.Item key="62">
+                  <span>highCharts</span>
+                  <Link to={'/chart/highCharts'}/>
+            </Menu.Item>
+            <Menu.Item key="63">
+                  <span>ReCharts</span>
+                  <Link to={'/chart/Recharts'}/>
+            </Menu.Item>
+            </SubMenu>
           </Menu>
         </Sider>
         <Layout>

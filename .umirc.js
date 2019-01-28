@@ -1,4 +1,5 @@
-import path from 'path';
+
+import { resolve } from 'path'
 // ref: https://umijs.org/config/
 export default {
   // base: '/myapp',
@@ -12,9 +13,14 @@ export default {
     ['umi-plugin-react', {
       antd: true,
       dva: true,
-      dynamicImport: false,
+      dynamicImport: {
+        webpackChunkName: true,
+        loadingComponent: './components/Loader/Loader',
+      },
       title: 'myapp',
-      dll: true,
+      dll: {
+        include: ['dva', 'dva/router', 'dva/saga', 'dva/fetch', 'antd/es'],
+      },
       hardSource: true,
       locale:{},
       routes: {
@@ -24,22 +30,31 @@ export default {
           /models\//,
           /components\//,
           /services\//,
+          /chart\/Container\.js$/,
+          /chart\/ECharts\/.+Component\.js$/,
+          /chart\/ECharts\/.+ComPonent\.js$/,
+          /chart\/ECharts\/theme\/.+\.js$/,
+          /chart\/highCharts\/.+Component\.js$/,
+          /chart\/highCharts\/mapdata\/.+\.js$/,
+          /chart\/Recharts\/.+Component\.js$/,
+          /chart\/Recharts\/Container\.js$/,
         ],
       },
     }],
   ],
 
   alias: {
-    src: path.resolve(__dirname, 'src'),
-    assets: path.resolve(__dirname, 'src/assets'),
-    common: path.resolve(__dirname, 'src/common'),
-    containers: path.resolve(__dirname, 'src/containers'),
-    layouts: path.resolve(__dirname, 'src/layouts'),
-    models: path.resolve(__dirname, 'src/models'),
-    pages: path.resolve(__dirname, 'src/pages'),
-    services: path.resolve(__dirname, 'src/services'),
-    utils: path.resolve(__dirname, 'src/utils'),
-    components: path.resolve(__dirname, 'src/components')
+    src: resolve(__dirname, 'src'),
+    assets: resolve(__dirname, 'src/assets'),
+    common: resolve(__dirname, 'src/common'),
+    containers: resolve(__dirname, 'src/containers'),
+    layouts: resolve(__dirname, 'src/layouts'),
+    models: resolve(__dirname, 'src/models'),
+    pages: resolve(__dirname, 'src/pages'),
+    services: resolve(__dirname, 'src/services'),
+    utils: resolve(__dirname, 'src/utils'),
+    themes: resolve(__dirname, './src/themes'),
+    components: resolve(__dirname, 'src/components')
   },
   targets: {
     ie: 11,
