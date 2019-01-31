@@ -7,7 +7,7 @@ import DataModal from './DataModal';
   dataSource: dataTransfer.dataCars,
   users,
   testPage,
-  loading,
+  loading: loading.effects['users/fetch'],
 }))
 export default class TableList extends Component {
   state = {
@@ -67,7 +67,9 @@ export default class TableList extends Component {
 
   render() {
     const {visible, record} = this.state;
-    const {dataSource} = this.props;
+    const {dataSource,loading,users} = this.props;
+    console.log(users);
+    debugger;
     // 表格列定义
     const columns = [{
       title: '姓名',
@@ -112,6 +114,7 @@ export default class TableList extends Component {
           bordered
           locale={{emptyText: '木有数据哦(⊙o⊙)'}}
           size="small"
+          loading={loading}
           // scroll={{ x: 1200, y: 700 }}
           // style={{ minHeight: '100vh' }}
         />
